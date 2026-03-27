@@ -1,17 +1,1211 @@
 ---
-
+const shopifyLink = "https://your-shop.myshopify.com";
+const appointmentLink = "#termin";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Entdecke exklusive Brautkleider bei Blanc Atelier – dein Traum beginnt hier. Vereinbare einen persönlichen Beratungstermin oder besuche unseren Online-Shop." />
+    <meta name="keywords" content="Brautkleid, Brautmode, Hochzeitskleid, Brautmodengeschäft, exklusiv, Atelier, Termin" />
+    <meta property="og:title" content="Blanc Atelier – Exklusive Brautmode" />
+    <meta property="og:description" content="Finde dein perfektes Kleid für den schönsten Tag deines Lebens." />
+    <meta property="og:type" content="website" />
+    <title>Blanc Atelier – Exklusive Brautmode</title>
+    <!-- Google Fonts: Playfair Display + Jost -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════ -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo">Blanc<span>Atelier</span></a>
+        <ul class="nav-links">
+          <li><a href="#kollektion">Kollektionen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#termin" class="nav-cta">Termin buchen</a></li>
+        </ul>
+        <button class="nav-burger" aria-label="Menü öffnen" id="burger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="nav-mobile" id="mobile-menu">
+        <ul>
+          <li><a href="#kollektion">Kollektionen</a></li>
+          <li><a href="#ueber-uns">Über uns</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#termin">Termin buchen</a></li>
+          <li><a href={shopifyLink} target="_blank" rel="noopener">Online-Shop</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80&auto=format&fit=crop"
+          alt="Braut im eleganten Kleid"
+          class="hero-img"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content fade-in">
+        <p class="hero-eyebrow">Blanc Atelier · Exklusive Brautmode</p>
+        <h1 class="hero-headline">
+          Finde dein perfektes Kleid<br />
+          <em>für den schönsten Tag</em><br />
+          deines Lebens
+        </h1>
+        <p class="hero-sub">Handverlesene Kollektionen. Persönliche Beratung. Unvergessliche Momente.</p>
+        <div class="hero-actions">
+          <a href={appointmentLink} class="btn btn-primary">Termin vereinbaren</a>
+          <a href={shopifyLink} class="btn btn-outline" target="_blank" rel="noopener">Zum Online-Shop</a>
+        </div>
+      </div>
+      <a href="#kollektion" class="hero-scroll" aria-label="Nach unten scrollen">
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         COLLECTIONS / HIGHLIGHTS
+    ═══════════════════════════════════════ -->
+    <section class="section kollektion" id="kollektion">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Unsere Kollektionen</p>
+          <h2>Jede Braut. Ein Traum.</h2>
+          <p class="section-sub">Entdecke Stile, die deine Persönlichkeit widerspiegeln – von zeitlos klassisch bis romantisch verspielt.</p>
+        </div>
+        <div class="collection-grid">
+          {[
+            {
+              img: "https://images.unsplash.com/photo-1594552072238-b8a33785b6cd?w=800&q=80&auto=format&fit=crop",
+              label: "Classic",
+              desc: "Zeitlose Eleganz für die Braut, die Tradition und Moderne verbindet.",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80&auto=format&fit=crop",
+              label: "Romantique",
+              desc: "Verspielt, feminin und voller Leichtigkeit – für das romantischste Ja-Wort.",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=800&q=80&auto=format&fit=crop",
+              label: "Boho",
+              desc: "Fließende Stoffe, natürliche Leichtigkeit – für die freie Seele.",
+            },
+            {
+              img: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&q=80&auto=format&fit=crop",
+              label: "Modern",
+              desc: "Klare Linien, minimalistisches Design – zeitgemäß und selbstbewusst.",
+            },
+          ].map((item) => (
+            <div class="collection-card reveal">
+              <div class="card-img-wrap">
+                <img src={item.img} alt={`Brautkleid Stil: ${item.label}`} loading="lazy" />
+                <div class="card-overlay">
+                  <a href={shopifyLink} class="card-btn" target="_blank" rel="noopener">Kollektion entdecken</a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>{item.label}</h3>
+                <p>{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="section-cta reveal">
+          <a href={shopifyLink} class="btn btn-primary" target="_blank" rel="noopener">Alle Kollektionen ansehen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ÜBER UNS
+    ═══════════════════════════════════════ -->
+    <section class="section ueber-uns" id="ueber-uns">
+      <div class="container ueber-inner">
+        <div class="ueber-img-wrap reveal">
+          <img
+            src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=900&q=80&auto=format&fit=crop&grayscale"
+            alt="Das Atelier Team"
+            class="ueber-img parallax-img"
+            loading="lazy"
+          />
+          <div class="ueber-img-deco"></div>
+        </div>
+        <div class="ueber-text reveal">
+          <p class="section-eyebrow">Über uns</p>
+          <h2>Mehr als ein Kleid. Ein Gefühl.</h2>
+          <p>Im Herzen unseres Ateliers steht eine tiefe Leidenschaft für das Besondere. Wir glauben, dass jede Braut einzigartig ist – und ihr Kleid genau das widerspiegeln sollte.</p>
+          <p>Seit über 15 Jahren begleiten wir Bräute auf ihrem Weg zu ihrem perfekten Kleid. Unsere Beraterinnen nehmen sich Zeit, hören zu und finden gemeinsam mit dir das Stück, das dich zum Strahlen bringt.</p>
+          <p>Erlebe eine Atmosphäre, in der du dich fallen lassen kannst – elegant, vertrauensvoll und ganz auf dich ausgerichtet.</p>
+          <a href={appointmentLink} class="btn btn-primary" style="margin-top: 2rem;">Mein Termin buchen</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════ -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Stimmen unserer Bräute</p>
+          <h2>Worte, die uns bewegen.</h2>
+        </div>
+        <div class="testimonial-slider" id="testimonialSlider">
+          <div class="testimonial-track" id="testimonialTrack">
+            {[
+              {
+                quote: "Ich habe in vielen Geschäften gesucht, aber erst hier habe ich das Kleid gefunden, das sich wirklich wie ICH angefühlt hat. Die Beratung war einfach wunderschön.",
+                name: "Lena M.",
+                date: "September 2024",
+              },
+              {
+                quote: "Das Team ist so herzlich und professionell. Ich war nervös, aber nach fünf Minuten fühlte ich mich wie zuhause. Mein Kleid war ein Traum.",
+                name: "Sophie K.",
+                date: "Juni 2024",
+              },
+              {
+                quote: "Blanc Atelier hat mir nicht nur ein Kleid gegeben – sie haben mir ein unvergessliches Erlebnis geschenkt. Danke von Herzen.",
+                name: "Maria V.",
+                date: "März 2024",
+              },
+              {
+                quote: "Die Auswahl ist einzigartig und das Atelier atmet Eleganz. Ich bin mit meinem Traumkleid nach Hause gegangen und weine immer noch vor Freude.",
+                name: "Anna B.",
+                date: "November 2023",
+              },
+            ].map((t, i) => (
+              <div class={`testimonial-item ${i === 0 ? "active" : ""}`}>
+                <div class="quote-mark">&ldquo;</div>
+                <p class="quote-text">{t.quote}</p>
+                <div class="quote-author">
+                  <span class="author-name">{t.name}</span>
+                  <span class="author-sep">·</span>
+                  <span class="author-date">{t.date}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="testimonial-nav">
+            <button class="t-prev" id="tPrev" aria-label="Vorheriges Zitat">&#8592;</button>
+            <div class="t-dots" id="tDots">
+              <button class="t-dot active" data-index="0"></button>
+              <button class="t-dot" data-index="1"></button>
+              <button class="t-dot" data-index="2"></button>
+              <button class="t-dot" data-index="3"></button>
+            </div>
+            <button class="t-next" id="tNext" aria-label="Nächstes Zitat">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA SECTION
+    ═══════════════════════════════════════ -->
+    <section class="section cta-section" id="termin">
+      <div class="cta-bg">
+        <img
+          src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1920&q=80&auto=format&fit=crop"
+          alt="Hochzeitsstimmung"
+          loading="lazy"
+        />
+        <div class="cta-overlay"></div>
+      </div>
+      <div class="container cta-content reveal">
+        <p class="section-eyebrow light">Dein nächster Schritt</p>
+        <h2 class="light">Bereit für deinen<br /><em>Traumtag?</em></h2>
+        <p class="cta-sub light">Erlebe eine persönliche Beratung in unserem Atelier<br />oder stöbere bequem von zu Hause in unserem Online-Shop.</p>
+        <div class="cta-actions">
+          <a href="mailto:hallo@blanc-atelier.de" class="btn btn-white">Termin per E-Mail anfragen</a>
+          <a href={shopifyLink} class="btn btn-outline-white" target="_blank" rel="noopener">Zum Online-Shop</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         GALERIE
+    ═══════════════════════════════════════ -->
+    <section class="section galerie" id="galerie">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-eyebrow">Galerie</p>
+          <h2>Momente, die bleiben.</h2>
+        </div>
+        <div class="gallery-grid">
+          {[
+            { src: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=800&q=80&auto=format&fit=crop", alt: "Braut mit Schleier" },
+            { src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&q=80&auto=format&fit=crop", alt: "Brautkleid Detail" },
+            { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80&auto=format&fit=crop", alt: "Hochzeitsfeier" },
+            { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80&auto=format&fit=crop", alt: "Brautstrauß" },
+            { src: "https://images.unsplash.com/photo-1615232428120-9aa7ce2c3e95?w=800&q=80&auto=format&fit=crop", alt: "Braut Portrait" },
+            { src: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop", alt: "Hochzeit Outdoor" },
+          ].map((img, i) => (
+            <div class="gallery-item reveal" data-index={i}>
+              <img src={img.src} alt={img.alt} loading="lazy" />
+              <div class="gallery-overlay">
+                <button class="gallery-open" data-src={img.src} data-alt={img.alt} aria-label="Bild vergrößern">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Schließen">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Vorheriges Bild">&#8592;</button>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Nächstes Bild">&#8594;</button>
+        <div class="lightbox-inner">
+          <img id="lightboxImg" src="" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" id="kontakt">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">Blanc<span>Atelier</span></a>
+          <p>Exklusive Brautmode für den schönsten Tag deines Lebens.</p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" aria-label="Pinterest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.236 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.181-.78 1.172-4.97 1.172-4.97s-.299-.598-.299-1.482c0-1.388.806-2.428 1.808-2.428.853 0 1.267.641 1.267 1.408 0 .858-.546 2.140-.828 3.330-.236.995.499 1.806 1.476 1.806 1.771 0 3.135-1.867 3.135-4.561 0-2.385-1.715-4.052-4.163-4.052-2.836 0-4.5 2.127-4.5 4.326 0 .856.33 1.774.741 2.276a.3.3 0 0 1 .069.286c-.076.314-.245.995-.278 1.134-.045.183-.149.222-.344.134-1.249-.581-2.030-2.407-2.030-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.220-5.190 6.220-1.013 0-1.967-.527-2.292-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446C17.523 22 22 17.523 22 12S17.523 2 12 2Z"/></svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#kollektion">Kollektionen</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href={shopifyLink} target="_blank" rel="noopener">Online-Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="mailto:hallo@blanc-atelier.de">hallo@blanc-atelier.de</a></li>
+            <li><a href="tel:+4930123456789">+49 30 123 456 789</a></li>
+            <li>Musterstraße 12<br />10115 Berlin</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Öffnungszeiten</h4>
+          <ul>
+            <li>Mo – Fr: 10:00 – 19:00</li>
+            <li>Sa: 10:00 – 17:00</li>
+            <li>Termine nach Vereinbarung</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; {new Date().getFullYear()} Blanc Atelier. Alle Rechte vorbehalten.</p>
+          <div class="footer-legal">
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
 </html>
+
+<style is:global>
+  /* ─── RESET & BASE ─────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: 'Jost', sans-serif;
+    color: #2c2520;
+    background: #fdfaf7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* ─── TOKENS ────────────────────────────────── */
+  :root {
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --cream: #fdfaf7;
+    --champagne: #f5efe6;
+    --rose: #f0e0e0;
+    --dark: #2c2520;
+    --mid: #6b5c54;
+    --light-text: #a89890;
+    --ff-serif: 'Playfair Display', Georgia, serif;
+    --ff-sans: 'Jost', sans-serif;
+    --transition: 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --section-py: clamp(5rem, 10vw, 9rem);
+  }
+
+  /* ─── CONTAINER ─────────────────────────────── */
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 3rem);
+  }
+
+  /* ─── TYPOGRAPHY ────────────────────────────── */
+  h1, h2, h3, h4 {
+    font-family: var(--ff-serif);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: clamp(2.4rem, 6vw, 5rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.4rem); }
+  h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+  em { font-style: italic; color: var(--gold); }
+  p { line-height: 1.8; color: var(--mid); font-weight: 300; }
+
+  /* ─── BUTTONS ───────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 2.25rem;
+    font-family: var(--ff-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: 1.5px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.2s;
+    white-space: nowrap;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+  }
+  .btn-primary:hover {
+    background: #b8904e;
+    border-color: #b8904e;
+  }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.7);
+  }
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: #fff;
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--dark);
+    border-color: #fff;
+  }
+  .btn-white:hover {
+    background: var(--champagne);
+  }
+  .btn-outline-white {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.7);
+  }
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: #fff;
+  }
+
+  /* ─── SECTION BASE ──────────────────────────── */
+  .section {
+    padding: var(--section-py) 0;
+  }
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 4rem;
+  }
+  .section-eyebrow {
+    font-family: var(--ff-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-eyebrow.light { color: var(--gold-light); }
+  .section-sub {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+  }
+  .section-cta {
+    text-align: center;
+    margin-top: 3.5rem;
+  }
+
+  /* ─── ANIMATIONS ─────────────────────────────── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .fade-in > * {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .fade-in > *:nth-child(1) { animation-delay: 0.3s; }
+  .fade-in > *:nth-child(2) { animation-delay: 0.6s; }
+  .fade-in > *:nth-child(3) { animation-delay: 0.85s; }
+  .fade-in > *:nth-child(4) { animation-delay: 1.05s; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── NAVBAR ─────────────────────────────────── */
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    transition: background var(--transition), box-shadow var(--transition);
+    padding: 0;
+  }
+  #navbar.scrolled {
+    background: rgba(253, 250, 247, 0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.07);
+  }
+  .nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 1.6rem clamp(1.25rem, 5vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  #navbar.scrolled .nav-inner { padding-top: 1rem; padding-bottom: 1rem; }
+  .nav-logo {
+    font-family: var(--ff-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    transition: color var(--transition);
+  }
+  #navbar.scrolled .nav-logo { color: var(--dark); }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.88);
+    transition: color var(--transition);
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  #navbar.scrolled .nav-links a { color: var(--mid); }
+  .nav-links .nav-cta {
+    padding: 0.6rem 1.4rem;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+  }
+  .nav-links .nav-cta::after { display: none; }
+  .nav-links .nav-cta:hover { background: rgba(255,255,255,0.1); }
+  #navbar.scrolled .nav-links .nav-cta {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  #navbar.scrolled .nav-links .nav-cta:hover { background: var(--champagne); }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .nav-burger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: #fff;
+    transition: background var(--transition);
+  }
+  #navbar.scrolled .nav-burger span { background: var(--dark); }
+  .nav-mobile {
+    display: none;
+    background: var(--cream);
+    border-top: 1px solid var(--champagne);
+    padding: 1.5rem clamp(1.25rem, 5vw, 3rem);
+  }
+  .nav-mobile.open { display: block; }
+  .nav-mobile ul { display: flex; flex-direction: column; gap: 1rem; }
+  .nav-mobile a {
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--dark);
+  }
+
+  /* ─── HERO ───────────────────────────────────── */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-out forwards;
+  }
+  @keyframes heroZoom {
+    to { transform: scale(1); }
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(20,15,12,0.25) 0%,
+      rgba(20,15,12,0.45) 50%,
+      rgba(20,15,12,0.6) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    padding: 0 clamp(1.25rem, 6vw, 4rem);
+    max-width: 860px;
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.4rem;
+  }
+  .hero-headline {
+    color: #fff;
+    margin-bottom: 1.4rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.18);
+  }
+  .hero-sub {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .scroll-line {
+    display: block;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.7));
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(0.6); opacity: 0.5; }
+    50%       { transform: scaleY(1); opacity: 1; }
+  }
+
+  /* ─── KOLLEKTION ─────────────────────────────── */
+  .kollektion { background: var(--cream); }
+  .collection-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .collection-card { overflow: hidden; }
+  .card-img-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+  .card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--transition);
+  }
+  .collection-card:hover .card-img-wrap img {
+    transform: scale(1.07);
+  }
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20,15,12,0.32);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .collection-card:hover .card-overlay { opacity: 1; }
+  .card-btn {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.7);
+    transition: background var(--transition);
+  }
+  .card-btn:hover { background: rgba(255,255,255,0.15); }
+  .card-body {
+    padding: 1.25rem 0.25rem;
+  }
+  .card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    color: var(--dark);
+  }
+  .card-body p { font-size: 0.9rem; }
+
+  /* ─── ÜBER UNS ───────────────────────────────── */
+  .ueber-uns { background: var(--champagne); overflow: hidden; }
+  .ueber-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 7rem);
+    align-items: center;
+  }
+  .ueber-img-wrap {
+    position: relative;
+  }
+  .ueber-img {
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+  }
+  .ueber-img-deco {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 60%;
+    height: 60%;
+    border: 1.5px solid var(--gold);
+    z-index: -1;
+    pointer-events: none;
+  }
+  .ueber-text { display: flex; flex-direction: column; gap: 1.2rem; }
+  .ueber-text h2 { margin-bottom: 0.5rem; }
+  .ueber-text p { font-size: 1rem; }
+
+  /* ─── TESTIMONIALS ───────────────────────────── */
+  .testimonials { background: var(--cream); }
+  .testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .testimonial-track { position: relative; min-height: 220px; }
+  .testimonial-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+  .testimonial-item.active { opacity: 1; pointer-events: auto; position: relative; }
+  .quote-mark {
+    font-family: var(--ff-serif);
+    font-size: 5rem;
+    line-height: 0.6;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+    user-select: none;
+  }
+  .quote-text {
+    font-family: var(--ff-serif);
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+    font-style: italic;
+    color: var(--dark);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+  .quote-author {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light-text);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .author-name { color: var(--gold); }
+  .testimonial-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .t-prev, .t-next {
+    background: none;
+    border: 1px solid var(--gold-light);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--gold);
+    font-size: 1.1rem;
+    transition: background var(--transition), border-color var(--transition);
+    border-radius: 0;
+  }
+  .t-prev:hover, .t-next:hover {
+    background: var(--champagne);
+    border-color: var(--gold);
+  }
+  .t-dots { display: flex; gap: 0.5rem; }
+  .t-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    padding: 0;
+  }
+  .t-dot.active { background: var(--gold); transform: scale(1.3); }
+
+  /* ─── CTA SECTION ────────────────────────────── */
+  .cta-section {
+    position: relative;
+    overflow: hidden;
+    padding: var(--section-py) 0;
+  }
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .cta-bg img {
+    object-position: center 30%;
+  }
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(20,10,8,0.72) 0%, rgba(44,25,15,0.62) 100%);
+  }
+  .cta-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .cta-content h2 { color: #fff; margin-bottom: 1rem; }
+  .cta-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2.5rem;
+    line-height: 1.9;
+  }
+  .cta-sub.light { color: rgba(255,255,255,0.8); }
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ─── GALERIE ────────────────────────────────── */
+  .galerie { background: var(--champagne); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    transition: transform 0.7s var(--transition);
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20,15,12,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-open {
+    width: 50px;
+    height: 50px;
+    border: 1.5px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: background var(--transition);
+  }
+  .gallery-open:hover { background: rgba(255,255,255,0.2); }
+
+  /* ─── LIGHTBOX ───────────────────────────────── */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(10,8,6,0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .lightbox-close:hover { color: #fff; }
+  .lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+  }
+  .lightbox-prev { left: 2rem; }
+  .lightbox-next { right: 2rem; }
+  .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.16); }
+  .lightbox-inner {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+  .lightbox-inner img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    width: auto;
+    height: auto;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────── */
+  .footer { background: var(--dark); color: rgba(255,255,255,0.7); }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+  }
+  .footer-logo {
+    font-family: var(--ff-serif);
+    font-size: 1.75rem;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-brand p { font-size: 0.9rem; line-height: 1.7; max-width: 260px; color: rgba(255,255,255,0.55); }
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    transition: border-color var(--transition), color var(--transition);
+  }
+  .social-links a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-col h4 {
+    font-family: var(--ff-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+  .footer-col ul { display: flex; flex-direction: column; gap: 0.75rem; }
+  .footer-col li, .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  .footer-col a { transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+  .footer-legal { display: flex; gap: 1.5rem; }
+  .footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+  .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ─── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 1024px) {
+    .collection-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .ueber-inner { grid-template-columns: 1fr; }
+    .ueber-img-wrap { max-width: 480px; margin: 0 auto; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: span 2; }
+    .lightbox-prev { left: 0.5rem; }
+    .lightbox-next { right: 0.5rem; }
+  }
+
+  @media (max-width: 540px) {
+    .collection-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: span 1; }
+    .hero-actions { flex-direction: column; align-items: center; }
+    .cta-actions { flex-direction: column; align-items: center; }
+  }
+</style>
+
+<script>
+  // ── Navbar scroll effect ──────────────────────
+  const navbar = document.getElementById('navbar')!;
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  // ── Mobile burger ─────────────────────────────
+  const burger = document.getElementById('burger')!;
+  const mobileMenu = document.getElementById('mobile-menu')!;
+  burger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // ── Scroll reveal ─────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        const el = entry.target as HTMLElement;
+        const delay = Number(el.dataset.delay || 0);
+        setTimeout(() => el.classList.add('visible'), delay);
+        revealObs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach((el, idx) => {
+    (el as HTMLElement).style.transitionDelay = `${(idx % 4) * 0.1}s`;
+    revealObs.observe(el);
+  });
+
+  // ── Testimonials slider ───────────────────────
+  const items = Array.from(document.querySelectorAll<HTMLElement>('.testimonial-item'));
+  const dots = Array.from(document.querySelectorAll<HTMLElement>('.t-dot'));
+  let current = 0;
+  function goTo(idx: number) {
+    items[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + items.length) % items.length;
+    items[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  document.getElementById('tPrev')!.addEventListener('click', () => goTo(current - 1));
+  document.getElementById('tNext')!.addEventListener('click', () => goTo(current + 1));
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+  });
+  // Auto-advance
+  setInterval(() => goTo(current + 1), 6000);
+
+  // ── Gallery lightbox ──────────────────────────
+  const galleryImages = Array.from(document.querySelectorAll<HTMLElement>('.gallery-item')).map(item => ({
+    src: item.querySelector<HTMLButtonElement>('.gallery-open')!.dataset.src!,
+    alt: item.querySelector<HTMLButtonElement>('.gallery-open')!.dataset.alt!,
+  }));
+  const lightbox = document.getElementById('lightbox')!;
+  const lightboxImg = document.getElementById('lightboxImg') as HTMLImageElement;
+  let currentGalleryIdx = 0;
+
+  function openLightbox(idx: number) {
+    currentGalleryIdx = idx;
+    lightboxImg.src = galleryImages[idx].src;
+    lightboxImg.alt = galleryImages[idx].alt;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function lightboxNav(dir: number) {
+    currentGalleryIdx = (currentGalleryIdx + dir + galleryImages.length) % galleryImages.length;
+    lightboxImg.src = galleryImages[currentGalleryIdx].src;
+    lightboxImg.alt = galleryImages[currentGalleryIdx].alt;
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.gallery-open').forEach((btn, idx) => {
+    btn.addEventListener('click', () => openLightbox(idx));
+  });
+  document.getElementById('lightboxClose')!.addEventListener('click', closeLightbox);
+  document.getElementById('lightboxPrev')!.addEventListener('click', () => lightboxNav(-1));
+  document.getElementById('lightboxNext')!.addEventListener('click', () => lightboxNav(1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+  });
+
+  // ── Parallax on about image ───────────────────
+  const parallaxImg = document.querySelector<HTMLElement>('.parallax-img');
+  if (parallaxImg) {
+    window.addEventListener('scroll', () => {
+      const rect = parallaxImg.closest('.ueber-uns')!.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      parallaxImg.style.transform = `translateY(${(progress - 0.5) * 40}px)`;
+    }, { passive: true });
+  }
+</script>
