@@ -1,5 +1,5 @@
 ---
-const shopifyLink = "https://your-shop.myshopify.com";
+const shopifyLink = "#";
 const appointmentLink = "#termin";
 ---
 
@@ -13,10 +13,10 @@ const appointmentLink = "#termin";
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Entdecke exklusive Brautkleider bei Blanc Atelier – dein Traum beginnt hier. Vereinbare einen persönlichen Beratungstermin oder besuche unseren Online-Shop." />
     <meta name="keywords" content="Brautkleid, Brautmode, Hochzeitskleid, Brautmodengeschäft, exklusiv, Atelier, Termin" />
-    <meta property="og:title" content="Blanc Atelier – Exklusive Brautmode" />
+    <meta property="og:title" content="OneMoment – Exklusive Brautmode" />
     <meta property="og:description" content="Finde dein perfektes Kleid für den schönsten Tag deines Lebens." />
     <meta property="og:type" content="website" />
-    <title>Blanc Atelier – Exklusive Brautmode</title>
+    <title>OneMoment – Exklusive Brautmode</title>
     <!-- Google Fonts: Playfair Display + Jost -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,7 +29,7 @@ const appointmentLink = "#termin";
     ═══════════════════════════════════════ -->
     <nav id="navbar">
       <div class="nav-inner">
-        <a href="/" class="nav-logo">Blanc<span>Atelier</span></a>
+        <a href="/" class="nav-logo">One<span>Moment</span></a>
         <ul class="nav-links">
           <li><a href="#kollektion">Kollektionen</a></li>
           <li><a href="#ueber-uns">Über uns</a></li>
@@ -66,7 +66,7 @@ const appointmentLink = "#termin";
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content fade-in">
-        <p class="hero-eyebrow">Blanc Atelier · Exklusive Brautmode</p>
+        <p class="hero-eyebrow">OneMoment · Exklusive Brautmode</p>
         <h1 class="hero-headline">
           Finde dein perfektes Kleid<br />
           <em>für den schönsten Tag</em><br />
@@ -96,7 +96,7 @@ const appointmentLink = "#termin";
         <div class="collection-grid">
           {[
             {
-              img: "https://images.unsplash.com/photo-1594552072238-b8a33785b6cd?w=800&q=80&auto=format&fit=crop",
+              img: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&q=80&auto=format&fit=crop",
               label: "Classic",
               desc: "Zeitlose Eleganz für die Braut, die Tradition und Moderne verbindet.",
             },
@@ -236,7 +236,7 @@ const appointmentLink = "#termin";
         <h2 class="light">Bereit für deinen<br /><em>Traumtag?</em></h2>
         <p class="cta-sub light">Erlebe eine persönliche Beratung in unserem Atelier<br />oder stöbere bequem von zu Hause in unserem Online-Shop.</p>
         <div class="cta-actions">
-          <a href="mailto:hallo@blanc-atelier.de" class="btn btn-white">Termin per E-Mail anfragen</a>
+          <a href="mailto:info@johannholm.de" class="btn btn-white">Termin per E-Mail anfragen</a>
           <a href={shopifyLink} class="btn btn-outline-white" target="_blank" rel="noopener">Zum Online-Shop</a>
         </div>
       </div>
@@ -253,11 +253,11 @@ const appointmentLink = "#termin";
         </div>
         <div class="gallery-grid">
           {[
-            { src: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?w=800&q=80&auto=format&fit=crop", alt: "Braut mit Schleier" },
+            { src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&q=80&auto=format&fit=crop", alt: "Braut mit Schleier" },
             { src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&q=80&auto=format&fit=crop", alt: "Brautkleid Detail" },
             { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80&auto=format&fit=crop", alt: "Hochzeitsfeier" },
             { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&q=80&auto=format&fit=crop", alt: "Brautstrauß" },
-            { src: "https://images.unsplash.com/photo-1615232428120-9aa7ce2c3e95?w=800&q=80&auto=format&fit=crop", alt: "Braut Portrait" },
+            { src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&q=80&auto=format&fit=crop", alt: "Braut Portrait" },
             { src: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800&q=80&auto=format&fit=crop", alt: "Hochzeit Outdoor" },
           ].map((img, i) => (
             <div class="gallery-item reveal" data-index={i}>
@@ -314,8 +314,8 @@ const appointmentLink = "#termin";
         <div class="footer-col">
           <h4>Kontakt</h4>
           <ul>
-            <li><a href="mailto:hallo@blanc-atelier.de">hallo@blanc-atelier.de</a></li>
-            <li><a href="tel:+4930123456789">+49 30 123 456 789</a></li>
+            <li><a href="mailto:hallo@johannholm.de">hallo@johannholm.de</a></li>
+            <li><a href="tel:+4930111222333">+49 30 111 222 333</a></li>
             <li>Musterstraße 12<br />10115 Berlin</li>
           </ul>
         </div>
